@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Check if OpenSCAD is installed
+if ! command -v openscad &> /dev/null; then
+    echo "OpenSCAD could not be found. Please install it to use this script."
+    exit 1
+fi
+
+# Prompt for stamp with default value
+while true; do
+    read -r -p "Enter stamp (default: printables): " stamp
+    stamp=${stamp:-printables}
+    if [[ -n "$stamp" ]]; then
+        break
+    else
+        echo "Stamp cannot be empty. Please try again."
+    fi
+done
+
+# Prompt for font size with default value
+while true; do
+    read -r -p "Enter font size (default: 30): " font_size
+    font_size=${font_size:-30}
+    if [[ "$font_size" =~ ^[1-9][0-9]*$ ]]; then
+        break
+    else
+        echo "Font size must be a positive integer. Please try again."
+    fi
+done
+
+# Display the collected values
+echo "Generating Stamp '$stamp' with size $font_size..."
+openscad -o "out/$stamp.stl" -D "stamp=\"$stamp\"" -D "size=$font_size" base-stamp.scad
+
+echo "Stamp '$stamp' generated successfully as 'out/$stamp.stl'."
