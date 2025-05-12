@@ -1,20 +1,48 @@
 # Erika's 3D Models
 OpenSCAD 3D models and some scripts to automate model generation and export.
 
+## Setup with Docker
+You need only Docker to generate the STL models. You can also use OpenSCAD directly if you have it installed on your system.
+
+The following command will build an OpenScad container image and land you in a shell where you can generate your models:
+
+```bash
+make openscad
+```
+
 ## Text2Stamp
 This is a script to generate 3D stamps from text. It uses OpenSCAD to create the models and export them in STL format.
 
-You need only Docker to generate the STL models. You can also use OpenSCAD directly if you have it installed on your system. 
-
-### Using via Docker
-
-The following command will build an OpenScad container image and land you in a shell where you can generate your models. 
+After landing in the shell, you can use the convenient `t2s` script to generate a stamp from text using prompts. For example. 
 
 ```bash
-make text2stamp
+cd text2stamp
+./t2s --stamp alice --font-size 30
 ```
 
-After landing in the shell, you can use the convenient `t2s` script to generate a stamp from text using prompts. For example. The script will prompt you for the stamp text and size and output the generated model in the `out` directory.
+You'll get output similar to this:
+
+```bash
+Generating Stamp 'alice' with size 30...
+ECHO: version = [2021, 1, 0]
+Geometries in cache: 4
+Geometry cache size in bytes: 71896
+CGAL Polyhedrons in cache: 1
+CGAL cache size in bytes: 642384
+Total rendering time: 0:00:00.277
+   Top level object is a 3D object:
+   Simple:        yes
+   Vertices:      476
+   Halfedges:    1428
+   Edges:         714
+   Halffacets:    496
+   Facets:        248
+   Volumes:         2
+Stamp 'alice' generated successfully as 'out/alice.stl'.
+
+```
+
+When no parameters are passed, the script will prompt you for the stamp text and size and output the generated model in the `out` directory:
 
 ```bash
 $ ./t2s
