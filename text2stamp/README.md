@@ -36,31 +36,14 @@ Total rendering time: 0:00:00.277
 Stamp 'alice' generated successfully as 'out/alice.stl'.
 
 ```
+### Script Parameters
+The script accepts the following parameters:
 
-To be prompted for the values needed to generate the stamp, just run the script without any parameters:
-
-```bash
-$ ./t2s
-Enter stamp (default: printables): erika
-Enter size (default: 30): 
-Generating Stamp 'erika' with size 30...
-ECHO: version = [2021, 1, 0]
-Geometries in cache: 4
-Geometry cache size in bytes: 65512
-CGAL Polyhedrons in cache: 1
-CGAL cache size in bytes: 585936
-Total rendering time: 0:00:00.261
-   Top level object is a 3D object:
-   Simple:        yes
-   Vertices:      434
-   Halfedges:    1302
-   Edges:         651
-   Halffacets:    454
-   Facets:        227
-   Volumes:         2
-Stamp 'erika' generated successfully as 'out/erika.stl'.
-
-```
+- `--stamp`: The text to be used for the stamp. Default is "printables".
+- `--size`: The approximate font size for the stamp. Default is 30.
+- `--font`: The font used for the stamp. Default is "Liberation Mono".
+- `--withborder`: A boolean value to add a border around the stamp. Default is false.
+- `--output_dir`: Directory where to output the STL file. Default is "text2stamp/out".
 
 ## Batch Scripts
 Some example scripts for batch stamp generation were included in the `examples` folder:

@@ -20,7 +20,7 @@ while IFS= read -r str; do
     # Skip empty lines
     [[ -z "$str" ]] && continue
     echo "Generating stamp for string: $str"
-    ./t2s --stamp "$str" --size 30 --output_dir "$output_dir"
+    ./t2s --stamp "$str" --size 30 --output_dir "$output_dir" --withborder
 done < "$input_file"
 
 echo "All stamps generated successfully."
