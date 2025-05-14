@@ -39,5 +39,10 @@ This project generates 3D stamps from text. It uses OpenSCAD to create the model
 
 ![Screenshot of PrusaSlicer showing generated stamp example](text2stamp/examples/printables.png)
 
+### Example Models
+
+- [Alphabet Stamps](text2stamp/examples/alphabet) - Set of letters from a to z that can be re-generated with different parameters using the `text2stamp/scripts/gen_alpha.sh` script.
+- [Word Stamps](text2stamp/examples/words) - Sete of pre-defined word stamps that can be re-generated with different parameters using the `text2stamp/scripts/gen_words.sh` script. Words are pulled from the `scripts/words.txt` file.
+
 Check the [Text2Stamp](text2stamp/README.md) subfolder for details on how to use it.
 
