@@ -9,6 +9,7 @@ fi
 # Default values
 stamp=""
 size=""
+output_dir="out"
 
 # Parse named parameters
 while [[ $# -gt 0 ]]; do
@@ -19,6 +20,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --size)
             size="$2"
+            shift 2
+            ;;
+        --output_dir)
+            output_dir="$2"
             shift 2
             ;;
         *)
@@ -56,6 +61,6 @@ fi
 
 # Display the collected values
 echo "Generating Stamp '$stamp' with size $size..."
-openscad -o "out/$stamp.stl" -D "stamp=\"$stamp\"" -D "size=$size" base-stamp.scad
+openscad -o "$output_dir/$stamp.stl" -D "stamp=\"$stamp\"" -D "size=$size" base-stamp.scad
 
 echo "Stamp '$stamp' generated successfully as 'out/$stamp.stl'."

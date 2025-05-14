@@ -62,6 +62,28 @@ Stamp 'erika' generated successfully as 'out/erika.stl'.
 
 ```
 
+## Batch Scripts
+Some example scripts for batch stamp generation were included in the `examples` folder:
+
+- `alpha-gen.sh`: Generates a stamp for each letter of the alphabet.
+- `words-gen.sh`: Generates a stamp for each word listed in the `words.txt` file. You can modify the file `words.txt` to use your own list of words.
+
+### alpha-gen.sh Usage
+
+```bash
+./scripts/alpha-gen.sh
+```
+This will generate an STL file for each letter of the alphabet and output the files to `examples/alphabet`.
+
+### words-gen.sh Usage
+
+```bash
+./scripts/words-gen.sh
+```
+
+This will generate an STL file for each word in the `scripts/words.txt` file. Files will be saved to the `examples/words` folder. You can modify the `words.txt` file to use your own list of words.
+
+
 ## Using OpenSCAD directly
 
 If you have OpenSCAD installed on your system, you can either run the `t2s` script or use OpenSCAD directly to generate the model. This can be done via their graphic interface or via command line. 
