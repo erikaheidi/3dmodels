@@ -8,7 +8,7 @@ fi
 
 # Default values
 stamp=""
-size=""
+size="30"
 output_dir="out"
 withborder=false
 font="Liberation Mono"

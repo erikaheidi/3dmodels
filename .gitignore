@@ -2,3 +2,4 @@
 .cache
 text2stamp/.cache
 text2stamp/*.stl
+out/

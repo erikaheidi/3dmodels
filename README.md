@@ -34,7 +34,7 @@ $
 
 From this shell, you can access all folders in this repository and run the included scripts to generate your STL files. Each model has its own parameters and instructions.
 
-## [Text2Stamp](text2stamp/README.md)
+## [Text2Stamp](text2stamp/README.md) - Stamp Maker
 This project generates 3D stamps from text. It uses OpenSCAD to create the models and export them in STL format, including a bash script to help you customize the generated models. You can also open the model directly in OpenSCAD and use the GUI to modify the parameters and generate your custom STLs.
 
 ![Screenshot of PrusaSlicer showing generated stamp example](text2stamp/examples/printables.png)
@@ -46,3 +46,10 @@ This project generates 3D stamps from text. It uses OpenSCAD to create the model
 
 Check the [Text2Stamp](text2stamp/README.md) subfolder for details on how to use it.
 
+## [RevolvingText](revolvingtext/README.md) - Motivational Sign Maker
+Creates a 3D model of a sign with revolving text in one or more lines. The model is generated using OpenSCAD and can be customized with different parameters. The [examples](revolvingtext/examples) folder contains a few pre-generated models that you can print directly.
+
+![Screenshot of OpenSCAD showing custom model](revolvingtext/examples/make-it-happen.png)
+
+
+Check the [RevolvingText](revolvingtext/README.md) subfolder for details on how to use it.
