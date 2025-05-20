@@ -49,7 +49,7 @@ Check the [Text2Stamp](text2stamp/README.md) subfolder for details on how to use
 ## [RevolvingText](revolvingtext/README.md) - Motivational Sign Maker
 Creates a 3D model of a sign with revolving text in one or more lines. The model is generated using OpenSCAD and can be customized with different parameters. The [examples](revolvingtext/examples) folder contains a few pre-generated models that you can print directly.
 
-![Screenshot of OpenSCAD showing custom model](revolvingtext/examples/make-it-happen.png)
+![Screenshot of OpenSCAD showing custom model](revolvingtext/examples/works-on-my-machine.png)
 
 
 Check the [RevolvingText](revolvingtext/README.md) subfolder for details on how to use it.

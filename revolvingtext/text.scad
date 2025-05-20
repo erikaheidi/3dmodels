@@ -1,21 +1,29 @@
 use <fonts/Geologica_Auto-ExtraBold.ttf>
 
-lines = ["make", "it", "happen"];
+//An array where each item is a line of text
+lines = ["it works", "on my", "machine"];
+//Must be a font available in the system of imported with "use"
 font = "Geologica:ExtraBold";
-base_thickness = 4;
+
 font_size = 10;
-font_factor = 0.9;
 
-MultiLineText(lines, font_size, font, font_factor, base_thickness);
+base_thickness = 1;
+//Used to adjust base positioning relative to text
+font_factor = 0.95;
 
-module MultiLineText(lines, font_size = 10, font = "Geologica:ExtraBold", font_factor = 1, base_thickness = 2) {
+base_padding = 10;
+//For support-free printing, this should be <=60
+angle = 45;
+
+MultiLineText(lines, font_size, font, font_factor, base_thickness, base_padding, angle);
+
+module MultiLineText(lines, font_size = 10, font = "Geologica:ExtraBold", font_factor = 1, base_thickness = 2, base_padding = 10, angle = 60) {
     line_height = font_size * 1.2;
-    padding = 20;
 
     // Calculate the base width and height dynamically
     widths = [for (line = lines) len(line) * font_size * font_factor];
-    base_width = max(widths) + padding;
-    base_height = line_height * len(lines) + padding;
+    base_width = max(widths) + base_padding;
+    base_height = (line_height * len(lines)) + base_padding;
 
     // Draw the base
     cube([base_width, base_height, base_thickness]);
@@ -23,8 +31,8 @@ module MultiLineText(lines, font_size = 10, font = "Geologica:ExtraBold", font_f
     // Loop through the lines and position them dynamically
     for (i = [0 : len(lines) - 1]) {
         line_coord_x = base_width / 2 - widths[i] / 2;
-        line_coord_y = base_height - (i + 1) * line_height - 2;
-        RevolveText(text = lines[i], coord_x = line_coord_x, coord_y = line_coord_y, font = font, font_size = font_size);
+        line_coord_y = base_height - (i + 1) * line_height;
+        RevolveText(text = lines[i], coord_x = line_coord_x, coord_y = line_coord_y, font = font, font_size = font_size, angle = angle);
     }
 }
 
